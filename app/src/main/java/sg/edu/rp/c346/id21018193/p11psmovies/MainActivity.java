@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         //test
         btnShow = findViewById(R.id.buttonShow);
         btnInsert = findViewById(R.id.buttonInsert);
+        lvMovies = findViewById(R.id.listViewMovies);
+        alMoviesList = new ArrayList<>();
+        caMovies = new CustomAdapter(this, R.layout.row, alMoviesList);
+        lvMovies.setAdapter(caMovies);
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,15 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        lvMovies = findViewById(R.id.listViewMovies);
-        alMoviesList = new ArrayList<>();
-
-
-        caMovies = new CustomAdapter(this, R.layout.row, alMoviesList);
-        lvMovies.setAdapter(caMovies);
-
-
     }
 
     @Override
