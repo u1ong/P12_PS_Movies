@@ -37,9 +37,9 @@ public class ModifyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DBHelper dbh = new DBHelper(ModifyActivity.this);
                 data.setGenre(genre.getText().toString());
-                data.setId(id.getText().toString());
+                data.setId(Integer.parseInt(id.getText().toString()));
                 data.setTitle(title.getText().toString());
-                data.setYear(year.getText().toString());
+                data.setYear(Integer.parseInt(year.getText().toString()));
                 dbh.updateMovie(data);
                 dbh.close();
 
