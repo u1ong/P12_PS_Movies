@@ -1,9 +1,13 @@
 package sg.edu.rp.c346.id21018193.p11psmovies;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -38,4 +42,42 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public long insertMovie(String title, String genre, int year, String rating) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TITLE, title);
+        values.put(COLUMN_GENRE, genre);
+        values.put(COLUMN_YEAR, year);
+        values.put(COLUMN_RATING, rating);
+        long result = db.insert(TABLE_MOVIE, null, values);
+        db.close();
+        Log.d("SQL Insert","ID:"+ result); //id returned, shouldn’t be -1
+        return result;
+    }
+
+    public ArrayList<Movies> getAllMovie() {
+        ArrayList<Movies> notes = new ArrayList<Movies>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns= {COLUMN_ID, COLUMN_TITLE, COLUMN_GENRE, COLUMN_YEAR, COLUMN_RATING};
+        Cursor cursor = db.query(TABLE_MOVIE, columns, null, null,
+                null, null, COLUMN_RATING, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String genre = cursor.getString(2);
+                int year = Integer.parseInt(cursor.getString(3));
+                String ratings = cursor.getString(4);
+
+                Movies movie = new Movies(id, title, genre, year, ratings);
+                notes.add(movie);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return notes;
+    }
 }
