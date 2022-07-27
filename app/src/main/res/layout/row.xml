@@ -27,7 +27,7 @@
             android:id="@+id/textViewYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0"
             android:text="Year" />
 
         <ImageView
