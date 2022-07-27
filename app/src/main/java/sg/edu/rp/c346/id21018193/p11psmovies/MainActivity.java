@@ -56,17 +56,17 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 String filtertext ="";
-                if(spnFilter.equals("G")){
+                if(spnFilter.getSelectedItem().equals("G")){
                     filtertext = "G";
-                } else if(spnFilter.equals("PG")) {
+                } else if(spnFilter.getSelectedItem().equals("PG")) {
                     filtertext = "PG";
-                } else if(spnFilter.equals("PG13")) {
+                } else if(spnFilter.getSelectedItem().equals("PG13")) {
                     filtertext = "PG13";
-                } else if(spnFilter.equals("NC16")) {
+                } else if(spnFilter.getSelectedItem().equals("NC16")) {
                     filtertext = "NC16";
-                } else if(spnFilter.equals("M18")){
+                } else if(spnFilter.getSelectedItem().equals("M18")){
                     filtertext = "M18";
-                }else if(spnFilter.equals("R21")){
+                }else if(spnFilter.getSelectedItem().equals("R21")){
                     filtertext = "R21";
                 }
                 alMoviesList.clear();
