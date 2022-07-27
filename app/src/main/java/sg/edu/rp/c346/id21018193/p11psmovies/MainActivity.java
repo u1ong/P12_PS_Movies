@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnShow = findViewById(R.id.buttonShow);
         btnInsert = findViewById(R.id.buttonInsert);
         lvMovies = findViewById(R.id.listViewMovies);
+        spnFilter = findViewById(R.id.spinner);
         alMoviesList = new ArrayList<>();
         caMovies = new CustomAdapter(this, R.layout.row, alMoviesList);
         lvMovies.setAdapter(caMovies);
@@ -74,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
                         filterword = "R21";
                         break;
                 }
+                DBHelper dbh = new DBHelper(MainActivity.this);
+                alMoviesList.clear();
+                alMoviesList.addAll(dbh.getAllMovie(filterword));
+                caMovies.notifyDataSetChanged();
+
             }
 
             @Override
