@@ -48,7 +48,9 @@ public class ModifyActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent j = new Intent(ModifyActivity.this,
+                        MainActivity.class);
+                startActivity(j);
             }
         });
 
