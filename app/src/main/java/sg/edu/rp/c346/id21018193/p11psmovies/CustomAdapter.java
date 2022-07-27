@@ -37,14 +37,26 @@ public class CustomAdapter extends ArrayAdapter {
 
         Movies currentItem = movieList.get(position);
 
+        tvTitle.setText(currentItem.getTitle());
+        tvGenre.setText(currentItem.getGenre());
         tvYear.setText(currentItem.getYear());
-        tvCode.setText("+" + currentItem.getCountryCode());
-        tvNum.setText(currentItem.getPhoneNum() + "");
-        if (currentItem.getGender() == 'F') {
-            ivGender.setImageResource(R.drawable.female);
+        if (currentItem.getRating() == "G") {
+            ivRating.setImageResource(R.drawable.rating_g);
         }
-        else {
-            ivGender.setImageResource(R.drawable.male);
+        else if (currentItem.getRating() == "m18"){
+            ivRating.setImageResource(R.drawable.rating_m18);
+        }
+        else if (currentItem.getRating() == "nc16"){
+            ivRating.setImageResource(R.drawable.rating_nc16);
+        }
+        else if (currentItem.getRating() == "pg"){
+            ivRating.setImageResource(R.drawable.rating_pg);
+        }
+        else if (currentItem.getRating() == "pg13"){
+            ivRating.setImageResource(R.drawable.rating_pg13);
+        }
+        else{
+            ivRating.setImageResource(R.drawable.rating_r21);
         }
 
         return rowView;
