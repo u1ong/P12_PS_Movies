@@ -28,6 +28,8 @@
         android:hint="@string/enter_movie_id_here"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:focusable="false"
+        android:clickable="false"
         android:minHeight="48dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:ignore="TextContrastCheck" />
