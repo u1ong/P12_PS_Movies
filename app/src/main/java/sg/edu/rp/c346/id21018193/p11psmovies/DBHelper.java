@@ -60,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] columns= {COLUMN_ID, COLUMN_TITLE, COLUMN_GENRE, COLUMN_YEAR, COLUMN_RATING};
+        String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_GENRE, COLUMN_YEAR, COLUMN_RATING};
         Cursor cursor = db.query(TABLE_MOVIE, columns, null, null,
                 null, null, COLUMN_RATING, null);
 
@@ -79,30 +79,60 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return notes;
+    }
+
+    public ArrayList<Movies> getAllMovie(String filterText) {
+        ArrayList<Movies> notes = new ArrayList<Movies>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_GENRE, COLUMN_YEAR, COLUMN_RATING};
+        String condition = COLUMN_RATING + " Like ?";
+        String[] args = { "%" +  filterText + "%"};
+        Cursor cursor = db.query(TABLE_MOVIE, columns, null, null,
+                null, null, COLUMN_RATING, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String genre = cursor.getString(2);
+                int year = Integer.parseInt(cursor.getString(3));
+                String ratings = cursor.getString(4);
+
+                Movies movie = new Movies(id, title, genre, year, ratings);
+                notes.add(movie);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return notes;
+    }
+
+
         //Test
 
-//   //     public int updateMovie(Movies data){//replace data with the value in dbh.updateSong(value);
-//    //        SQLiteDatabase db = this.getWritableDatabase();
-//    //        ContentValues values = new ContentValues();
-//            values.put(COLUMN_YEAR, data.getYear());
-//            values.put(COLUMN_GENRE, data.getGenre());
-//            values.put(COLUMN_TITLE, data.getTitle());
-//            values.put(COLUMN_RATING, data.getRating());
-//            String condition = COLUMN_ID + "= ?";
-//            String[] args = {String.valueOf(data.get_id())};
-//            int result = db.update(TABLE_MOVIE, values, condition, args);
-//            db.close();
-//            return result;
-//        }
+        public int updateMovie(Movies data){//replace data with the value in dbh.updateSong(value);
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_YEAR, data.getYear());
+            values.put(COLUMN_GENRE, data.getGenre());
+            values.put(COLUMN_TITLE, data.getTitle());
+            values.put(COLUMN_RATING, data.getRating());
+            String condition = COLUMN_ID + "= ?";
+            String[] args = {String.valueOf(data.getId())};
+            int result = db.update(TABLE_MOVIE, values, condition, args);
+            db.close();
+            return result;
+        }
 
-//        public int deleteMovie(int id){
-//            SQLiteDatabase db = this.getWritableDatabase();
-//            String condition = COLUMN_ID + "= ?";
-//            String[] args = {String.valueOf(id)};
-//            int result = db.delete(TABLE_MOVIE, condition, args);
-//
-//            db.close();
-//            return result;
-//        }
+        public int deleteMovie(int id){
+            SQLiteDatabase db = this.getWritableDatabase();
+            String condition = COLUMN_ID + "= ?";
+            String[] args = {String.valueOf(id)};
+            int result = db.delete(TABLE_MOVIE, condition, args);
+
+            db.close();
+            return result;
+        }
     }
-}
