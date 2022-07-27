@@ -30,6 +30,9 @@ public class InsertActivity extends AppCompatActivity {
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                if(!title.getText().toString().isEmpty()){
+//                    may add later
+//                }
                 String inTitle = title.getText().toString();
                 String inGenre = genre.getText().toString();
                 String yearText = year.getText().toString();
