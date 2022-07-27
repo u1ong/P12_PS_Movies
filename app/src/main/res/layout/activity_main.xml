@@ -13,9 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Insert Movies"
+        android:text="@string/insert_movies"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:backgroundTint="#64BD42" />
+        app:backgroundTint="#64BD42"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/buttonShow"
@@ -24,14 +25,15 @@
         android:fontFamily="casual"
         android:text="@string/show_all_movies"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:backgroundTint="#52A631" />
+        app:backgroundTint="#52A631"
+        tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/spinnerItems"
-        />
+        android:minHeight="48dp" />
 
     <ListView
         android:id="@+id/listViewMovies"

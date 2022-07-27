@@ -15,7 +15,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/movie_id"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etID"
@@ -37,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:fontFamily="casual"
-        android:text="@string/movie_title" />
+        android:text="@string/movie_title"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -60,7 +62,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/genre"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etGenre"
@@ -83,7 +86,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/year"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etYear"
@@ -106,7 +110,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/ratings"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/spinnerRates"
@@ -129,7 +134,8 @@
             android:fontFamily="casual"
             android:text="@string/update"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:backgroundTint="#3A9541" />
+            app:backgroundTint="#3A9541"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -150,6 +156,7 @@
         android:fontFamily="casual"
         android:text="@string/cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:backgroundTint="#60AF41" />
+        app:backgroundTint="#60AF41"
+        tools:ignore="TextContrastCheck" />
 
 </LinearLayout>

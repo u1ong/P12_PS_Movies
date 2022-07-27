@@ -15,7 +15,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/movie_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -38,7 +39,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/genre"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etGenre"
@@ -59,7 +61,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/year"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/etYear"
@@ -82,7 +85,8 @@
         android:layout_margin="3dp"
         android:fontFamily="casual"
         android:text="@string/ratings"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/spinnerRates"
@@ -105,7 +109,8 @@
             android:fontFamily="casual"
             android:text="@string/insert"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:backgroundTint="#53AC31" />
+            app:backgroundTint="#53AC31"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/btnReturn"
@@ -116,7 +121,8 @@
             android:fontFamily="casual"
             android:text="@string/show_list"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:backgroundTint="#53BC2A" />
+            app:backgroundTint="#53BC2A"
+            tools:ignore="TextContrastCheck" />
     </LinearLayout>
 
 </LinearLayout>
