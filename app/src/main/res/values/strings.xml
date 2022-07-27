@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">P11 PS Movies</string>
+    <string name="insert">Insert</string>
+    <string name="show_list">Show List</string>
     <string-array name="spinnerItems">
         <item>G</item>
         <item>PG</item>
