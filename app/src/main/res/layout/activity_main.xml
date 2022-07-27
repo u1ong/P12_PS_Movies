@@ -28,6 +28,14 @@
         app:backgroundTint="#52A631"
         tools:ignore="TextContrastCheck" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Rating"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
