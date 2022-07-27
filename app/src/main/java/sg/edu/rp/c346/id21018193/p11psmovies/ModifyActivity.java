@@ -26,7 +26,7 @@ public class ModifyActivity extends AppCompatActivity {
         year = findViewById(R.id.etYear);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
-        btnCancel = findViewById(R.id.buttonCancel);
+        btnCancel = findViewById(R.id.btnCancel);
         rating = findViewById(R.id.spinnerRates);
 
         Intent i = getIntent();
@@ -47,8 +47,6 @@ public class ModifyActivity extends AppCompatActivity {
                 data.setYear(Integer.parseInt(year.getText().toString()));
                 dbh.updateMovie(data);
                 dbh.close();
-
-
             }
         });
 
