@@ -7,6 +7,11 @@
     <string name="year">Year</string>
     <string name="ratings">Ratings</string>
     <string name="insert">Insert</string>
+    <string name="show_list">Show List</string>
+    <string name="enter_movie_title_here">Enter movie title here</string>
+    <string name="enter_genre_here">Enter Genre here</string>
+    <string name="enter_year_of_release_here">Enter year of release here</string>
+    <string name="show_all_movies">Show All Movies</string>
     <string-array name="spinnerItems">
         <item>G</item>
         <item>PG</item>

@@ -11,7 +11,7 @@
         android:id="@+id/buttonShow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show All PG-13 Movies" />
+        android:text="@string/show_all_movies" />
 
     <ListView
         android:id="@+id/listViewMovies"

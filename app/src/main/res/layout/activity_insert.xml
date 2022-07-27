@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
-        android:hint="Enter movie title here"
+        android:hint="@string/enter_movie_title_here"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
-        android:hint="Enter Genre here"
+        android:hint="@string/enter_genre_here"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         tools:ignore="TextContrastCheck"
@@ -58,10 +58,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
-        android:hint="Enter year of release here"
+        android:hint="@string/enter_year_of_release_here"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/reviewheader"
@@ -96,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="Show List" />
+            android:text="@string/show_list" />
     </LinearLayout>
 
 </LinearLayout>
