@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         alMoviesList = new ArrayList<>();
         caMovies = new CustomAdapter(this, R.layout.row, alMoviesList);
         lvMovies.setAdapter(caMovies);
+
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int
+                    position, long identity) {
+                Movies data = alMoviesList.get(position);
+                Intent editI = new Intent(MainActivity.this, ModifyActivity.class);
+                editI.putExtra("data", data);
+                startActivity(editI);
+            }
+        });
+
     }
 
     @Override
