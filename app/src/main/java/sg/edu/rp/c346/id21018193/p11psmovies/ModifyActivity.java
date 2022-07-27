@@ -36,6 +36,20 @@ public class ModifyActivity extends AppCompatActivity {
         title.setText(data.getTitle());
         genre.setText(data.getGenre());
         year.setText(data.getYear()+"");
+        if(data.getRating()=="G")
+        {
+            rating.setSelection(0);
+        }else if(data.getRating()=="PG"){
+            rating.setSelection(1);
+        }else if(data.getRating()=="PG13"){
+            rating.setSelection(2);
+        }else if(data.getRating()=="NC16"){
+            rating.setSelection(3);
+        }else if(data.getRating()=="M18"){
+            rating.setSelection(4);
+        }else if(data.getRating()=="R21"){
+            rating.setSelection(5);
+        }
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
