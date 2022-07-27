@@ -109,9 +109,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return notes;
     }
 
-
-        //Test
-
         public int updateMovie(Movies data){//replace data with the value in dbh.updateSong(value);
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
