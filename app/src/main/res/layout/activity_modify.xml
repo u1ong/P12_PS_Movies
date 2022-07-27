@@ -15,7 +15,7 @@
         android:text="@string/movie_id" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
