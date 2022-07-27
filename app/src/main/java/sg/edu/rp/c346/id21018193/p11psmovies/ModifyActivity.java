@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class ModifyActivity extends AppCompatActivity {
     EditText title, genre, year, id;
     Button btnUpdate, btnDelete, btnCancel;
-    Spinner rating;
+    Spinner setRate;
     Movies data;
 
     @Override
@@ -27,7 +28,7 @@ public class ModifyActivity extends AppCompatActivity {
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
         btnCancel = findViewById(R.id.btnCancel);
-        rating = findViewById(R.id.spinnerRates);
+        setRate = findViewById(R.id.spRating);
 
         Intent i = getIntent();
         data = (Movies) i.getSerializableExtra("data");
@@ -36,20 +37,39 @@ public class ModifyActivity extends AppCompatActivity {
         title.setText(data.getTitle());
         genre.setText(data.getGenre());
         year.setText(data.getYear()+"");
-        if(data.getRating()=="G")
-        {
-            rating.setSelection(0);
-        }else if(data.getRating()=="PG"){
-            rating.setSelection(1);
-        }else if(data.getRating()=="PG13"){
-            rating.setSelection(2);
-        }else if(data.getRating()=="NC16"){
-            rating.setSelection(3);
-        }else if(data.getRating()=="M18"){
-            rating.setSelection(4);
-        }else if(data.getRating()=="R21"){
-            rating.setSelection(5);
+        switch(data.getRating()){
+            case "G":
+                setRate.setSelection(0);
+                break;
+            case "PG":
+                setRate.setSelection(1);
+                break;
+            case "PG13":
+                setRate.setSelection(2);
+                break;
+            case "NC16":
+                setRate.setSelection(3);
+                break;
+            case "M18":
+                setRate.setSelection(4);
+                break;
+            case "R21":
+                setRate.setSelection(5);
+                break;
         }
+//        if(data.getRating().equals("G")){
+//            setRate.setSelection(0);
+//        }else if(data.getRating().equals("PG")){
+//            setRate.setSelection(1);
+//        }else if(data.getRating().equals("PG13")){
+//            setRate.setSelection(2);
+//        }else if(data.getRating().equals("NC16")){
+//            setRate.setSelection(3);
+//        }else if(data.getRating().equals("M18")){
+//            setRate.setSelection(4);
+//        }else if(data.getRating().equals("R21")){
+//            setRate.setSelection(5);
+//        }
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +79,13 @@ public class ModifyActivity extends AppCompatActivity {
                 data.setId(Integer.parseInt(id.getText().toString()));
                 data.setTitle(title.getText().toString());
                 data.setYear(Integer.parseInt(year.getText().toString()));
-                data.setRating(rating.getSelectedItem().toString());
+                data.setRating(setRate.getSelectedItem().toString());
                 dbh.updateMovie(data);
                 dbh.close();
+
+                Toast.makeText(ModifyActivity.this, "Update successful", Toast.LENGTH_LONG).show();
+                Intent back = new Intent(ModifyActivity.this, MainActivity.class);
+                startActivity(back);
             }
         });
 
@@ -70,7 +94,9 @@ public class ModifyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DBHelper dbh = new DBHelper(ModifyActivity.this);
                 dbh.deleteMovie(data.getId());
-
+                Toast.makeText(ModifyActivity.this, "Delete successful", Toast.LENGTH_LONG).show();
+                Intent back = new Intent(ModifyActivity.this, MainActivity.class);
+                startActivity(back);
             }
         });
 

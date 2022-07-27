@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //filter isnt working for now
         spnFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                DBHelper dbh = new DBHelper(MainActivity.this);
                 String filtertext ="";
                 if(spnFilter.getSelectedItem().equals("G")){
                     filtertext = "G";
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if(spnFilter.getSelectedItem().equals("R21")){
                     filtertext = "R21";
                 }
+                DBHelper dbh = new DBHelper(MainActivity.this);
                 alMoviesList.clear();
                 alMoviesList.addAll(dbh.getAllMovie(filtertext));
                 caMovies.notifyDataSetChanged();
