@@ -55,30 +55,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 DBHelper dbh = new DBHelper(MainActivity.this);
-                String filterword ="";
-                switch(spnFilter.getSelectedItemPosition()){
-                    case 0:
-                        filterword = "G";
-                        break;
-                    case 1:
-                        filterword = "PG";
-                        break;
-                    case 2:
-                        filterword = "PG13";
-                        break;
-                    case 3:
-                        filterword = "NC16";
-                        break;
-                    case 4:
-                        filterword = "M18";
-                        break;
-                    case 5:
-                        filterword = "R21";
-                        break;
+                String filtertext ="";
+                if(spnFilter.equals("G")){
+                    filtertext = "G";
+                } else if(spnFilter.equals("PG")) {
+                    filtertext = "PG";
+                } else if(spnFilter.equals("PG13")) {
+                    filtertext = "PG13";
+                } else if(spnFilter.equals("NC16")) {
+                    filtertext = "NC16";
+                } else if(spnFilter.equals("M18")){
+                    filtertext = "M18";
+                }else if(spnFilter.equals("R21")){
+                    filtertext = "R21";
                 }
-                //test
                 alMoviesList.clear();
-                alMoviesList.addAll(dbh.getAllMovie(filterword));
+                alMoviesList.addAll(dbh.getAllMovie(filtertext));
                 caMovies.notifyDataSetChanged();
 
             }

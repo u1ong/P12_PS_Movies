@@ -45,6 +45,7 @@ public class ModifyActivity extends AppCompatActivity {
                 data.setId(Integer.parseInt(id.getText().toString()));
                 data.setTitle(title.getText().toString());
                 data.setYear(Integer.parseInt(year.getText().toString()));
+                data.setRating(rating.getSelectedItem().toString());
                 dbh.updateMovie(data);
                 dbh.close();
 
