@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         spnFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                DBHelper dbh = new DBHelper(MainActivity.this);
                 String filterword ="";
                 switch(spnFilter.getSelectedItemPosition()){
                     case 0:
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                         filterword = "R21";
                         break;
                 }
-                DBHelper dbh = new DBHelper(MainActivity.this);
                 alMoviesList.clear();
                 alMoviesList.addAll(dbh.getAllMovie(filterword));
                 caMovies.notifyDataSetChanged();
