@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 alMoviesList.clear();
-                alMoviesList.addAll(dbh.getAllMovie(filtertext));
+                alMoviesList.addAll(dbh.getFilterMovie(filtertext));
                 caMovies.notifyDataSetChanged();
 
             }

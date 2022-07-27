@@ -81,7 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return notes;
     }
 
-    public ArrayList<Movies> getAllMovie(String filterText) {
+    public ArrayList<Movies> getFilterMovie(String filterText) {
         ArrayList<Movies> notes = new ArrayList<Movies>();
 
         SQLiteDatabase db = this.getReadableDatabase();
