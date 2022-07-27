@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         filterword = "R21";
                         break;
                 }
+                //test
                 alMoviesList.clear();
                 alMoviesList.addAll(dbh.getAllMovie(filterword));
                 caMovies.notifyDataSetChanged();
