@@ -37,5 +37,4 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("ALTER TABLE " + TABLE_MOVIE + " ADD COLUMN  module_name TEXT ");
         onCreate(db);
     }
-
 }
