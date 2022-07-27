@@ -2,6 +2,7 @@ package sg.edu.rp.c346.id21018193.p11psmovies;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,9 @@ public class ModifyActivity extends AppCompatActivity {
         btnDelete = findViewById(R.id.btnDelete);
         btnCancel = findViewById(R.id.buttonCancel);
         rating = findViewById(R.id.spinnerRates);
+
+        Intent i = getIntent();
+        data = (Movies) i.getSerializableExtra("data");
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
