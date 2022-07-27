@@ -30,14 +30,14 @@ public class CustomAdapter extends ArrayAdapter {
 
         View rowView = inflater.inflate(layout_id, parent, false);
 
-        TextView tvName = rowView.findViewById(R.id.textViewName);
-        TextView tvCode = rowView.findViewById(R.id.textViewCountryCode);
-        TextView tvNum = rowView.findViewById(R.id.textViewPhoneNum);
-        ImageView ivGender = rowView.findViewById(R.id.imageViewGender);
+        TextView tvTitle = rowView.findViewById(R.id.textViewTitle);
+        TextView tvGenre = rowView.findViewById(R.id.textViewGenre);
+        TextView tvYear = rowView.findViewById(R.id.textViewYear);
+        ImageView ivRating = rowView.findViewById(R.id.imageViewRating);
 
-        Contact currentItem = contactList.get(position);
+        Movies currentItem = movieList.get(position);
 
-        tvName.setText(currentItem.getName());
+        tvYear.setText(currentItem.getYear());
         tvCode.setText("+" + currentItem.getCountryCode());
         tvNum.setText(currentItem.getPhoneNum() + "");
         if (currentItem.getGender() == 'F') {
