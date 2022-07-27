@@ -29,7 +29,7 @@ public class InsertActivity extends AppCompatActivity {
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Movies newMovie = new Movies();
             }
         });
 
