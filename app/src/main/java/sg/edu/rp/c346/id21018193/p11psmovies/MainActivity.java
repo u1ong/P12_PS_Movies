@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int
-                    position, long identity) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long identity) {
                 Movies data = alMoviesList.get(position);
                 Intent editI = new Intent(MainActivity.this, ModifyActivity.class);
                 editI.putExtra("data", data);

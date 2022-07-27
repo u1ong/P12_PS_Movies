@@ -13,6 +13,7 @@ public class ModifyActivity extends AppCompatActivity {
     EditText title, genre, year, id;
     Button btnUpdate, btnDelete, btnCancel;
     Spinner rating;
+    Movies data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
