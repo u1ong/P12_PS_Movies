@@ -35,6 +35,14 @@ public class ModifyActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DBHelper dbh = new DBHelper(ModifyActivity.this);
+                data.setGenre(genre.getText().toString());
+                data.setId(id.getText().toString());
+                data.setTitle(title.getText().toString());
+                data.setYear(year.getText().toString());
+                dbh.updateMovie(data);
+                dbh.close();
+
 
             }
         });
@@ -42,6 +50,8 @@ public class ModifyActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DBHelper dbh = new DBHelper(ModifyActivity.this);
+                dbh.deleteMovie(data.getId());
 
             }
         });
