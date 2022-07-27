@@ -32,6 +32,11 @@ public class ModifyActivity extends AppCompatActivity {
         Intent i = getIntent();
         data = (Movies) i.getSerializableExtra("data");
 
+        id.setText(data.getId()+"");
+        title.setText(data.getTitle());
+        genre.setText(data.getGenre());
+        year.setText(data.getYear()+"");
+
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
