@@ -39,7 +39,7 @@ public class CustomAdapter extends ArrayAdapter {
 
         tvTitle.setText(currentItem.getTitle());
         tvGenre.setText(currentItem.getGenre());
-        tvYear.setText(currentItem.getYear());
+        tvYear.setText(currentItem.getYear() + "");
         if (currentItem.getRating() == "G") {
             ivRating.setImageResource(R.drawable.rating_g);
         }

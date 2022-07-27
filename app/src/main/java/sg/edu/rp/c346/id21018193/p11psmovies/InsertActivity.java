@@ -59,9 +59,9 @@ public class InsertActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(InsertActivity.this,
+                Intent j = new Intent(InsertActivity.this,
                         MainActivity.class);
-                startActivity(i);
+                startActivity(j);
             }
         });
 
