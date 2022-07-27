@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ListView lvMovies;
     ArrayList<Movies> alMoviesList;
     CustomAdapter caMovies;
+    Spinner spnFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,38 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this,
                        InsertActivity.class);
                 startActivity(i);
+            }
+        });
+
+        spnFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String filterword ="";
+                switch(spnFilter.getSelectedItemPosition()){
+                    case 0:
+                        filterword = "G";
+                        break;
+                    case 1:
+                        filterword = "PG";
+                        break;
+                    case 2:
+                        filterword = "PG13";
+                        break;
+                    case 3:
+                        filterword = "NC16";
+                        break;
+                    case 4:
+                        filterword = "M18";
+                        break;
+                    case 5:
+                        filterword = "R21";
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
