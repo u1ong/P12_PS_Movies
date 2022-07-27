@@ -48,7 +48,7 @@ public class InsertActivity extends AppCompatActivity {
                     title.setText("");
                     genre.setText("");
                     year.setText("");
-                    rating.setSelection(1);
+                    rating.setSelection(0);
                 } else {//insertion failed
                     Toast.makeText(InsertActivity.this, inTitle + " failed to insert into database", Toast.LENGTH_LONG).show();
                 }
