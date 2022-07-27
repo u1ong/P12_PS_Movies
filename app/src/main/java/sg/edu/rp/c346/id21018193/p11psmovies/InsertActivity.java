@@ -31,6 +31,7 @@ public class InsertActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Movies newMovie = new Movies();
             }
+
         });
 
     }
