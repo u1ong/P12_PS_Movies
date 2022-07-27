@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class InsertActivity extends AppCompatActivity {
 
@@ -36,9 +37,18 @@ public class InsertActivity extends AppCompatActivity {
                 String inRating = rating.getSelectedItem().toString();
 
                 DBHelper dbh = new DBHelper(InsertActivity.this);
+                long insert_id = dbh.insertMovie(inTitle, inGenre, inyear, inRating);
 
+                if (insert_id != -1) {//if insertion is successful
+                    Toast.makeText(InsertActivity.this, "Added " + inTitle + " to the database successfully", Toast.LENGTH_LONG).show();
+                    title.setText("");
+                    genre.setText("");
+                    year.setText("");
+                    rating.setSelection(1);
+                } else {//insertion failed
+                    Toast.makeText(InsertActivity.this, inTitle + " failed to insert into database", Toast.LENGTH_LONG).show();
+                }
             }
-
         });
 
     }
