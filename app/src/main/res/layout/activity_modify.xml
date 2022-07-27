@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textID"
+        android:id="@+id/tvID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -35,7 +35,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textHeader"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -58,7 +58,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textGenre"
+        android:id="@+id/tvGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -82,7 +82,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/yeartext"
+        android:id="@+id/tvYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -106,7 +106,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/reviewheader"
+        android:id="@+id/tvReview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -116,7 +116,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Spinner
-        android:id="@+id/spinnerRates"
+        android:id="@+id/spRating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/spinnerItems"
@@ -152,7 +152,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonCancel"
+        android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
