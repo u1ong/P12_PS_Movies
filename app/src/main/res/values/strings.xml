@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">P11 PS Movies</string>
-    <string name="insert">Insert</string>
-    <string name="show_list">Show List</string>
     <string name="movie_title">Movie Title</string>
     <string name="genre">Genre</string>
     <string name="year">Year</string>
