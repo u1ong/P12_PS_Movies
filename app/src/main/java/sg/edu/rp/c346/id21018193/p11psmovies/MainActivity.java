@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
         lvMovies = findViewById(R.id.listViewMovies);
@@ -35,5 +35,14 @@ public class MainActivity extends AppCompatActivity {
         lvMovies.setAdapter(caMovies);
 
 
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        DBHelper dbh = new DBHelper(MainActivity.this);
+        alMoviesList.clear();
+        alMoviesList.addAll(dbh.getAllMovie());
+        caMovies.notifyDataSetChanged();
     }
 }
