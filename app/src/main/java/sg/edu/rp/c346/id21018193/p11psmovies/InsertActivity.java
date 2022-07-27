@@ -2,6 +2,7 @@ package sg.edu.rp.c346.id21018193.p11psmovies;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,16 @@ public class InsertActivity extends AppCompatActivity {
                 } else {//insertion failed
                     Toast.makeText(InsertActivity.this, inTitle + " failed to insert into database", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        btnShowList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(InsertActivity.this,
+                        MainActivity.class);
+                startActivity(i);
             }
         });
 
