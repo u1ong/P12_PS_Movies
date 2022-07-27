@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#69AADD"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="@string/movie_id" />
+        android:fontFamily="casual"
+        android:text="@string/movie_id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
         android:id="@+id/etID"
@@ -20,17 +23,20 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:fontFamily="casual"
         android:hint="@string/enter_movie_id_here"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
         android:minHeight="48dp"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
+        android:fontFamily="casual"
         android:text="@string/movie_title" />
 
     <EditText
@@ -39,10 +45,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/enter_movie_title_here"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -50,7 +58,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="@string/genre" />
+        android:fontFamily="casual"
+        android:text="@string/genre"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
         android:id="@+id/etGenre"
@@ -58,18 +68,22 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/enter_genre_here"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/yeartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="@string/year" />
+        android:fontFamily="casual"
+        android:text="@string/year"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <EditText
         android:id="@+id/etYear"
@@ -77,10 +91,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="@string/enter_year_of_release_here"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -88,7 +104,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="@string/ratings" />
+        android:fontFamily="casual"
+        android:text="@string/ratings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Spinner
         android:id="@+id/spinnerRates"
@@ -108,7 +126,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
-            android:text="@string/update" />
+            android:fontFamily="casual"
+            android:text="@string/update"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -116,13 +136,17 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
-            android:text="@string/delete" />
+            android:fontFamily="casual"
+            android:text="@string/delete"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cancel" />
+        android:fontFamily="casual"
+        android:text="@string/cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </LinearLayout>
