@@ -11,7 +11,8 @@
         android:id="@+id/buttonInsert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insert Movies" />
+        android:text="Insert Movies"
+        app:backgroundTint="#64BD42" />
 
     <Button
         android:id="@+id/buttonShow"
@@ -19,9 +20,14 @@
         android:layout_height="wrap_content"
         android:text="@string/show_all_movies" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ListView
         android:id="@+id/listViewMovies"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="197dp" />
 
 </LinearLayout>
