@@ -81,7 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return notes;
         //Test
 
-        public int updateSong(Movies data){//replace data with the value in dbh.updateSong(value);
+        public int updateMovie(Movies data){//replace data with the value in dbh.updateSong(value);
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put(COLUMN_YEAR, data.getYear());
