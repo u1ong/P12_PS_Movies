@@ -63,10 +63,10 @@
         android:text="Ratings" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerRates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/spinnerItems"/>/>
+        android:entries="@array/spinnerItems"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/insert" />
+            android:text="Insert" />
 
         <Button
             android:id="@+id/btnReturn"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="@string/show_list" />
+            android:text="Show List" />
     </LinearLayout>
 
 </LinearLayout>
