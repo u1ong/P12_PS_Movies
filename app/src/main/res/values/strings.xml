@@ -12,6 +12,11 @@
     <string name="enter_genre_here">Enter Genre here</string>
     <string name="enter_year_of_release_here">Enter year of release here</string>
     <string name="show_all_movies">Show All Movies</string>
+    <string name="movie_id">Movie ID</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="enter_movie_id_here">Enter Movie ID Here</string>
     <string-array name="spinnerItems">
         <item>G</item>
         <item>PG</item>
