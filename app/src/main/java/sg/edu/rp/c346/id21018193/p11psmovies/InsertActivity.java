@@ -29,7 +29,14 @@ public class InsertActivity extends AppCompatActivity {
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Movies newMovie = new Movies();
+                String inTitle = title.getText().toString();
+                String inGenre = genre.getText().toString();
+                String yearText = year.getText().toString();
+                int inyear = Integer.parseInt(yearText);
+                String inRating = rating.getSelectedItem().toString();
+
+                DBHelper dbh = new DBHelper(InsertActivity.this);
+
             }
 
         });
