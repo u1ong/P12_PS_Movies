@@ -12,61 +12,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="Movie Title" />
+        android:text="@string/movie_title" />
 
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:layout_margin="3dp"
-        android:hint="Enter movie title here" />
+        android:ems="10"
+        android:hint="Enter movie title here"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="Genre" />
+        android:text="@string/genre" />
 
     <EditText
         android:id="@+id/etGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:layout_margin="3dp"
-        android:hint="Enter Genre here" />
+        android:ems="10"
+        android:hint="Enter Genre here"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/yeartext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="Year" />
+        android:text="@string/year" />
 
     <EditText
         android:id="@+id/etYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
         android:layout_margin="3dp"
-        android:hint="Enter year of release here" />
+        android:ems="10"
+        android:hint="Enter year of release here"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/reviewheader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:text="Ratings" />
+        android:text="@string/ratings" />
 
     <Spinner
         android:id="@+id/spinnerRates"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/spinnerItems"/>
+        android:entries="@array/spinnerItems"
+        android:minHeight="48dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="3dp"
-            android:text="Insert" />
+            android:text="@string/insert" />
 
         <Button
             android:id="@+id/btnReturn"
