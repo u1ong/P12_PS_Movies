@@ -9,14 +9,14 @@
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:text="Title:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textViewGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Genre" />
+        android:text="Genre:" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,14 +28,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Year" />
+            android:text="Year:" />
 
         <ImageView
             android:id="@+id/imageViewRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            />
+            android:layout_weight="0" />
 
     </LinearLayout>
 </LinearLayout>
