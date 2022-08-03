@@ -117,7 +117,9 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-
+                myBuilder.setNeutralButton("Cancel", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
         });
 
@@ -145,7 +147,9 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-
+                myBuilder.setNeutralButton("Cancel", null);
+                AlertDialog myDialog = myBuilder.create();
+                myDialog.show();
             }
         });
 
