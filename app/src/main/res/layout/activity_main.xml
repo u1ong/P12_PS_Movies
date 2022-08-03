@@ -33,8 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="casual"
-        android:text="Rating"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:text="@string/rating"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:ignore="TextContrastCheck" />
 
     <Spinner
         android:id="@+id/spinner"
