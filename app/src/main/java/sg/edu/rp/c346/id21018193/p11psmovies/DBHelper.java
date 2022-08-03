@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -132,4 +133,8 @@ public class DBHelper extends SQLiteOpenHelper {
             db.close();
             return result;
         }
+
+    public Collection<? extends Movies> getAllMoviesByRating(String rating) {
+        return null;
     }
+}

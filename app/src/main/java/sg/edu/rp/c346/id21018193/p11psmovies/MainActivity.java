@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -55,25 +56,24 @@ public class MainActivity extends AppCompatActivity {
         spnFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String filtertext ="";
-                if(spnFilter.getSelectedItem().equals("G")){
-                    filtertext = "G";
-                } else if(spnFilter.getSelectedItem().equals("PG")) {
-                    filtertext = "PG";
-                } else if(spnFilter.getSelectedItem().equals("PG13")) {
-                    filtertext = "PG13";
-                } else if(spnFilter.getSelectedItem().equals("NC16")) {
-                    filtertext = "NC16";
-                } else if(spnFilter.getSelectedItem().equals("M18")){
-                    filtertext = "M18";
-                }else if(spnFilter.getSelectedItem().equals("R21")){
-                    filtertext = "R21";
-                }
                 DBHelper dbh = new DBHelper(MainActivity.this);
-                alMoviesList.clear();
-                alMoviesList.addAll(dbh.getFilterMovie(filtertext));
-                caMovies.notifyDataSetChanged();
+                String rating = spnFilter.getSelectedItem().toString();
 
+                if (!rating.equals("Show all movies")) {
+                    alMoviesList.clear();
+                    alMoviesList.addAll(dbh.getAllMoviesByRating(rating));
+                    caMovies.notifyDataSetChanged();
+
+                    alMoviesList.clear();
+                    alMoviesList.addAll(dbh.getAllMoviesByRating(rating));
+                    caMovies.notifyDataSetChanged();
+
+                    Toast.makeText(MainActivity.this, "Displaying all songs rated " + rating, Toast.LENGTH_SHORT).show();
+                } else {
+                    alMoviesList.clear();
+                    alMoviesList.addAll(dbh.getAllMovie());
+                    caMovies.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long identity) {
