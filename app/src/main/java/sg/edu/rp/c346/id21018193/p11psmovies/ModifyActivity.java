@@ -95,6 +95,7 @@ public class ModifyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder myBuilder = new AlertDialog.Builder(ModifyActivity.this);
+                DBHelper dbh = new DBHelper(ModifyActivity.this);
                 myBuilder.setTitle("Delete");
                 myBuilder.setMessage("Are you sure you want to delete: " + getTitle());
                 myBuilder.setCancelable(true);
@@ -102,7 +103,6 @@ public class ModifyActivity extends AppCompatActivity {
                 myBuilder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DBHelper dbh = new DBHelper(ModifyActivity.this);
                         dbh.deleteMovie(data.getId());
                         Toast.makeText(ModifyActivity.this, "Delete successful", Toast.LENGTH_LONG).show();
                         Intent back = new Intent(ModifyActivity.this, MainActivity.class);
