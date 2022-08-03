@@ -102,6 +102,11 @@ public class ModifyActivity extends AppCompatActivity {
                 myBuilder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        DBHelper dbh = new DBHelper(ModifyActivity.this);
+                        dbh.deleteMovie(data.getId());
+                        Toast.makeText(ModifyActivity.this, "Delete successful", Toast.LENGTH_LONG).show();
+                        Intent back = new Intent(ModifyActivity.this, MainActivity.class);
+                        startActivity(back);
                     }
                 });
 
@@ -112,11 +117,7 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-                DBHelper dbh = new DBHelper(ModifyActivity.this);
-                dbh.deleteMovie(data.getId());
-                Toast.makeText(ModifyActivity.this, "Delete successful", Toast.LENGTH_LONG).show();
-                Intent back = new Intent(ModifyActivity.this, MainActivity.class);
-                startActivity(back);
+
             }
         });
 
@@ -131,6 +132,9 @@ public class ModifyActivity extends AppCompatActivity {
                 myBuilder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Intent j = new Intent(ModifyActivity.this,
+                                MainActivity.class);
+                        startActivity(j);
                     }
                 });
 
@@ -141,9 +145,7 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-                Intent j = new Intent(ModifyActivity.this,
-                        MainActivity.class);
-                startActivity(j);
+
             }
         });
 
