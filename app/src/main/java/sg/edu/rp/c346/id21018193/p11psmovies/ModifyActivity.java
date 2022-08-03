@@ -1,7 +1,9 @@
 package sg.edu.rp.c346.id21018193.p11psmovies;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -92,6 +94,24 @@ public class ModifyActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(ModifyActivity.this);
+                myBuilder.setTitle("Delete");
+                myBuilder.setMessage("Are you sure you want to delete: " + getTitle());
+                myBuilder.setCancelable(true);
+                //Configure the 'positive' button
+                myBuilder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                //Configure the 'negative' button
+                myBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
                 DBHelper dbh = new DBHelper(ModifyActivity.this);
                 dbh.deleteMovie(data.getId());
                 Toast.makeText(ModifyActivity.this, "Delete successful", Toast.LENGTH_LONG).show();
@@ -103,6 +123,24 @@ public class ModifyActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder myBuilder = new AlertDialog.Builder(ModifyActivity.this);
+                myBuilder.setTitle("Discard Changes");
+                myBuilder.setMessage("Are you sure you want to discard changes? ");
+                myBuilder.setCancelable(true);
+                //Configure the 'positive' button
+                myBuilder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                //Configure the 'negative' button
+                myBuilder.setNegativeButton("Do not discard", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
                 Intent j = new Intent(ModifyActivity.this,
                         MainActivity.class);
                 startActivity(j);
