@@ -110,13 +110,6 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-                //Configure the 'negative' button
-                myBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-
                 myBuilder.setNeutralButton("Cancel", null);
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
@@ -147,7 +140,6 @@ public class ModifyActivity extends AppCompatActivity {
                     }
                 });
 
-                myBuilder.setNeutralButton("Cancel", null);
                 AlertDialog myDialog = myBuilder.create();
                 myDialog.show();
             }
