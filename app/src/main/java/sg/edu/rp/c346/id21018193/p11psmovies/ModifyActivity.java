@@ -38,6 +38,7 @@ public class ModifyActivity extends AppCompatActivity {
         id.setText(data.getId()+"");
         title.setText(data.getTitle());
         genre.setText(data.getGenre());
+
         year.setText(data.getYear()+"");
         switch(data.getRating()){
             case "G":
